@@ -1,4 +1,14 @@
 {
     "name": "M2 Pro",
-    "arch": "arm64e"
+    "arch": "arm64e",
+    "internalname": "t6020",
+    "secureromver": "Bootrom 7168.0.0.300.12",
+    "SEPROMVER": "Unknown",
+    "codename": "Rhodes Chop",
+    "PCoreName": "Avalanche",
+    "ECoreName": "Blizzard",
+    "PCoreCount": 10,
+    "ECoreCount": 2
+
+
 }
