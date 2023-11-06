@@ -1,4 +1,12 @@
 {
     "name": "M1 Ultra",
-    "arch": "arm64e"
+    "arch": "arm64e",
+    "internalname": "t6002",
+    "secureromver": "Bootrom 5756.0.0.100.52",
+    "SEPROMVER": "Unknown",
+    "codename": "Jade 2C",
+    "PCoreName": "Firestorm",
+    "ECoreName": "Icestorm",
+    "PCoreCount": 16,
+    "ECoreCount": 4
 }
