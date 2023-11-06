@@ -1,4 +1,14 @@
 {
     "name": "M2",
-    "arch": "arm64e"
+    "arch": "arm64e",
+    "internalname": "t8112",
+    "secureromver": "Bootrom 6821.0.0.200.16",
+    "SEPROMVER": "AppleSEPROM-544.0.0.200.1",
+    "codename": "Staten ",
+    "PCoreName": "Avalanche",
+    "ECoreName": "Blizzard",
+    "PCoreCount": 4,
+    "ECoreCount": 4
+
+
 }
