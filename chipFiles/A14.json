@@ -1,4 +1,14 @@
 {
     "name": "A14",
-    "arch": "arm64e"
+    "arch": "arm64e",
+    "internalname": "t8101",
+    "secureromver": "Bootrom 5281.0.0.100.45",
+    "SEPROMVER": "Unknown",
+    "codename": "Sicily",
+    "PCoreName": "Firestorm",
+    "ECoreName": "Icestorm",
+    "PCoreCount": 2,
+    "ECoreCount": 4
+
+
 }
