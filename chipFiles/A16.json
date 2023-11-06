@@ -1,4 +1,14 @@
 {
     "name": "A16",
-    "arch": "arm64e"
+    "arch": "arm64e",
+    "internalname": "t8120",
+    "secureromver": "Bootrom 7195.0.0.300.25",
+    "SEPROMVER": "Unknown",
+    "codename": "Crete",
+    "PCoreName": "Everest",
+    "ECoreName": "Sawtooth",
+    "PCoreCount": 2,
+    "ECoreCount": 4
+
+
 }
