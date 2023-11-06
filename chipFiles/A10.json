@@ -3,6 +3,7 @@
     "arch": "arm64"
     "internalname": "t8010"
     "secureromver": "Bootrom 2696.0.0.1.33"
+    "SEPROMVER": "AppleSEPROM-268.0.0.1.16"
     "codename": "Cayman"
     "PCoreName": "Hurricane"
     "ECoreName": "Zephyr"
