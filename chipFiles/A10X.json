@@ -1,4 +1,14 @@
 {
     "name": "A10X",
     "arch": "arm64"
+    "internalname": "t8011"
+    "secureromver": "Bootrom 3135.0.0.2.3"
+    "SEPROMVER": "AppleSEPROM-302.0.0.2.1"
+    "codename": "Myst"
+    "PCoreName": "Hurricane"
+    "ECoreName": "Zephyr"
+    "PCoreCount": 3
+    "ECoreCount": 3
+
+
 }
