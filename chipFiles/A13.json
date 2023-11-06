@@ -1,4 +1,14 @@
 {
     "name": "A13",
-    "arch": "arm64e"
+    "arch": "arm64e",
+    "internalname": "t8030",
+    "secureromver": "Bootrom 4479.0.0.100.4",
+    "SEPROMVER": "Unknown",
+    "codename": "Cebu",
+    "PCoreName": "Lightning",
+    "ECoreName": "Thunder",
+    "PCoreCount": 2,
+    "ECoreCount": 4
+
+
 }
