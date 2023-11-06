@@ -1,4 +1,14 @@
 {
     "name": "M1",
-    "arch": "arm64e"
+    "arch": "arm64e",
+    "internalname": "t8103",
+    "secureromver": "Bootrom 5540.0.0.400.2",
+    "SEPROMVER": "AppleSEPROM-520.0.102.200.16",
+    "codename": "Tonga",
+    "PCoreName": "Firestorm",
+    "ECoreName": "Icestorm",
+    "PCoreCount": 2,
+    "ECoreCount": 4
+
+
 }
