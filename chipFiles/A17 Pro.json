@@ -1,4 +1,14 @@
 {
-    "name": "A17 Pro",
-    "arch": "arm64e"
+    "name": "A17",
+    "arch": "arm64e",
+    "internalname": "t8130",
+    "secureromver": "Bootrom 8104.0.0.201.4",
+    "SEPROMVER": "Unknown",
+    "codename": "Unknown",
+    "PCoreName": "Unknown",
+    "ECoreName": "Unknown",
+    "PCoreCount": 2,
+    "ECoreCount": 4
+
+
 }
