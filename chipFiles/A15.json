@@ -1,4 +1,14 @@
 {
     "name": "A15",
-    "arch": "arm64e"
+    "arch": "arm64e",
+    "internalname": "t8110",
+    "secureromver": "Bootrom 6338.0.0.200.19",
+    "SEPROMVER": "Unknown",
+    "codename": "Ellis",
+    "PCoreName": "Avalanche",
+    "ECoreName": "Blizzard",
+    "PCoreCount": 2,
+    "ECoreCount": 4
+
+
 }
