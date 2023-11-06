@@ -1,4 +1,14 @@
 {
     "name": "M1 Pro",
-    "arch": "arm64e"
+    "arch": "arm64e",
+    "internalname": "t6000",
+    "secureromver": "Bootrom 5756.0.0.100.52",
+    "SEPROMVER": "Unknown",
+    "codename": "Jade Chop",
+    "PCoreName": "Firestorm",
+    "ECoreName": "Icestorm",
+    "PCoreCount": 8,
+    "ECoreCount": 2
+
+
 }
