@@ -1,4 +1,14 @@
 {
     "name": "A11",
-    "arch": "arm64"
+    "arch": "arm64",
+    "internalname": "t8015",
+    "secureromver": "Bootrom 3332.0.0.1.23",
+    "SEPROMVER": "Unknown",
+    "codename": "Skye",
+    "PCoreName": "Monsoon",
+    "ECoreName": "Mistral",
+    "PCoreCount": 2,
+    "ECoreCount": 4
+
+
 }
