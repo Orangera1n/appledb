@@ -1,4 +1,14 @@
 {
     "name": "A12",
-    "arch": "arm64e"
+    "arch": "arm64e",
+    "internalname": "t8020",
+    "secureromver": "Bootrom 3865.0.0.4.7",
+    "SEPROMVER": "Unknown",
+    "codename": "Cyprus",
+    "PCoreName": "Vortex",
+    "ECoreName": "Tempest",
+    "PCoreCount": 2,
+    "ECoreCount": 4
+
+
 }
