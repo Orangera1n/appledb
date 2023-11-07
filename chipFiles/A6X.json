@@ -1,4 +1,14 @@
 {
     "name": "A6X",
-    "arch": "armv7s"
+    "arch": "armv7s",
+    "internalname": "s5l8955",
+    "secureromver": "Bootrom 1145.3.3",
+    "SEPROMVER": "None",
+    "codename": "Bali",
+    "PCoreName": "Swift",
+    "ECoreName": "None",
+    "PCoreCount": 2,
+    "ECoreCount": 0
+
+
 }
