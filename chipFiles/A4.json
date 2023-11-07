@@ -1,4 +1,14 @@
 {
     "name": "A4",
-    "arch": "armv7"
-} 
+    "arch": "armv7",
+    "internalname": "s5l8930",
+    "secureromver": "Bootrom 574.4",
+    "SEPROMVER": "None",
+    "codename": "None",
+    "PCoreName": "None",
+    "ECoreName": "None",
+    "PCoreCount": 1,
+    "ECoreCount": 0
+
+
+}
