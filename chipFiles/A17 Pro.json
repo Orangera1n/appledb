@@ -4,9 +4,9 @@
     "internalname": "t8130",
     "secureromver": "Bootrom 8104.0.0.201.4",
     "SEPROMVER": "Unknown",
-    "codename": "Unknown",
-    "PCoreName": "Unknown",
-    "ECoreName": "Unknown",
+    "codename": "Coll",
+    "PCoreName": "Everest",
+    "ECoreName": "Sawtooth",
     "PCoreCount": 2,
     "ECoreCount": 4
 
