@@ -1,4 +1,14 @@
 {
     "name": "A5X",
-    "arch": "armv7"
+    "arch": "armv7",
+    "internalname": "s5l8945",
+    "secureromver": "Bootrom 1062.2",
+    "SEPROMVER": "None",
+    "codename": "None",
+    "PCoreName": "None",
+    "ECoreName": "None",
+    "PCoreCount": 2,
+    "ECoreCount": 0
+
+
 }
