@@ -1,4 +1,14 @@
 {
     "name": "A5",
-    "arch": "armv7"
+    "arch": "armv7",
+    "internalname": "s5l8940/s5l8942/s5l8947",
+    "secureromver": "Bootrom 838.5/ROM/Bootrom 1458.2",
+    "SEPROMVER": "None",
+    "codename": "None",
+    "PCoreName": "None",
+    "ECoreName": "None",
+    "PCoreCount": 2,
+    "ECoreCount": 0
+
+
 }
