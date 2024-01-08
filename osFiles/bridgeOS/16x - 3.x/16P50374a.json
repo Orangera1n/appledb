@@ -1,0 +1,30 @@
+{
+    "osStr": "bridgeOS",
+    "version": "3.0 beta 10",
+    "build": "16P50374a",
+    "buildTrain": "bridgeOSLibertySeed",
+    "released": "2018-09-04",
+    "beta": true,
+    "deviceMap": [
+        "iBridge2,1",
+        "iBridge2,3",
+        "iBridge2,4"
+    ],
+    "sources": [
+        {
+            "type": "pkg",
+            "deviceMap": [
+                "iBridge2,1",
+                "iBridge2,3",
+                "iBridge2,4"
+            ],
+            "links": [
+                {
+                    "url": "http://swcdn.apple.com/content/downloads/06/61/041-03374/geg2rxwczswve5ojidk58qvt7grpmnlx9l/BridgeOSUpdateCustomer.pkg",
+                    "active": false
+                }
+            ],
+            "size": 253197608
+        }
+    ]
+}

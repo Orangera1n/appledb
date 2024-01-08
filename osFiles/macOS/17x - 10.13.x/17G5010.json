@@ -1,8 +1,10 @@
 {
     "osStr": "macOS",
-    "version": "10.13.6 (Security Update 2019-001 beta 2)",
+    "version": "10.13.6 (Security Update 2018-004 beta 2)",
     "build": "17G5010",
+    "embeddedOSBuild": "14Y664",
     "bridgeOSBuild": "16P53129a",
+    "buildTrain": "LoboSecLibertyD",
     "released": "2018-12-19",
     "beta": true,
     "appledbWebImage": {

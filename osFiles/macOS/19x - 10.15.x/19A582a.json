@@ -2,7 +2,9 @@
     "osStr": "macOS",
     "version": "10.15 GM",
     "build": "19A582a",
-    "bridgeOSBuild": "17P572",
+    "embeddedOSBuild": "14Y906",
+    "bridgeOSBuild": "17P50571a",
+    "buildTrain": "macOSJazzSeed",
     "released": "2019-10-03",
     "rc": true,
     "appledbWebImage": {

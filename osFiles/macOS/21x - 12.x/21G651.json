@@ -2,7 +2,9 @@
     "osStr": "macOS",
     "version": "12.6.7",
     "build": "21G651",
+    "embeddedOSBuild": "14Y910",
     "bridgeOSBuild": "20P5060",
+    "buildTrain": "StarSecurityRomeF",
     "released": "2023-06-21",
     "releaseNotes": "https://support.apple.com/HT212585#macos1267",
     "securityNotes": "https://support.apple.com/HT213810",
@@ -138,7 +140,7 @@
             "links": [
                 {
                     "url": "https://swcdn.apple.com/content/downloads/18/30/032-97690-A_RNQLC09SLR/rd7o4w50xrst3ofw3bhlbkjypi24eldqop/InstallAssistant.pkg",
-                    "active": true
+                    "active": false
                 }
             ],
             "hashes": {

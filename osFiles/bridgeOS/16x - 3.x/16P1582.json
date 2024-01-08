@@ -1,0 +1,35 @@
+{
+    "osStr": "bridgeOS",
+    "version": "3.1",
+    "build": "16P1582",
+    "buildTrain": "bridgeOSLibertyBHW",
+    "released": "2018-11-05",
+    "deviceMap": [
+        "iBridge2,1",
+        "iBridge2,3",
+        "iBridge2,4",
+        "iBridge2,5",
+        "iBridge2,7",
+        "iBridge2,8"
+    ],
+    "sources": [
+        {
+            "type": "pkg",
+            "deviceMap": [
+                "iBridge2,1",
+                "iBridge2,3",
+                "iBridge2,4",
+                "iBridge2,5",
+                "iBridge2,7",
+                "iBridge2,8"
+            ],
+            "links": [
+                {
+                    "url": "http://swcdn.apple.com/content/downloads/22/16/041-18149/qs6k03b70plmmoa4hkp170ois16091arj5/BridgeOSUpdateCustomer.pkg",
+                    "active": false
+                }
+            ],
+            "size": 324680997
+        }
+    ]
+}

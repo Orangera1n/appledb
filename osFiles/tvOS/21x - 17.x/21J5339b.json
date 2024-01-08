@@ -2,8 +2,13 @@
     "osStr": "tvOS",
     "version": "17.0 beta 6",
     "build": "21J5339b",
+    "buildTrain": "StarlightSeed",
     "released": "2023-08-15",
     "beta": true,
+    "appledbWebImage": {
+        "id": "tvos17",
+        "align": "left"
+    },
     "deviceMap": [
         "AppleTV5,3",
         "AppleTV6,2",

@@ -2,6 +2,7 @@
     "osStr": "HomePod Software",
     "version": "17.0",
     "build": "21J354",
+    "buildTrain": "Starlight",
     "released": "2023-09-18",
     "createDuplicateEntries": [
         {
@@ -14,6 +15,10 @@
     "releaseNotes": "https://support.apple.com/HT208714#17",
     "ipd": {
         "AudioAccessory": "https://updates.cdn-apple.com/2023SpringSeed/documentation/032-79617/714FE47B-D5D1-4C41-98E6-20B502E72E1F/HomePodRTF.ipd"
+    },
+    "appledbWebImage": {
+        "id": "audioos17",
+        "align": "left"
     },
     "deviceMap": [
         "AudioAccessory1,1",

@@ -2,7 +2,9 @@
     "osStr": "macOS",
     "version": "10.15.7 (Security Update 2021-008 beta 2)",
     "build": "19H1606",
+    "embeddedOSBuild": "14Y908",
     "bridgeOSBuild": "19P50639a",
+    "buildTrain": "JazzSecurityStarC",
     "released": "2021-11-16",
     "beta": true,
     "appledbWebImage": {

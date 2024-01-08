@@ -1,7 +1,7 @@
 module.exports = {
   name: "palera1n",
   alias: ["palerain"],
-  priority: 0,
+  priority: 1,
   info: {
     website: {
       name: "palera.in",
@@ -15,16 +15,12 @@ module.exports = {
         pkgman: "sileo",
         updateLink: [
           {
-            text: 'Updating to 15.8',
-            link: '/updating-to-15-8/'
+            text: 'Updating to 16.7.4',
+            link: '/updating-to-16-7-4/'
           },
           {
-            text: 'Updating to 16.7.2',
-            link: '/updating-to-16-7-2/'
-          },
-          {
-            text: 'Updating to 17.1',
-            link: '/updating-to-17-1/'
+            text: 'Updating to 17.2',
+            link: '/updating-to-17-2/'
           },
         ]
       }
@@ -33,7 +29,7 @@ module.exports = {
     type: "Semi-tethered",
     icon: "/assets/images/jb-icons/palera1n.png",
     notes: "Compatible with A8(X) - A11 devices. A11 devices cannot use a passcode, Touch ID, Face ID, or Apple Pay in a jailbroken state, and must have never had a password after restoring on iOS 16.",
-    firmwares: ["15.0","17.1"]
+    firmwares: ["15.0","17.2"]
   },
   compatibility: [
     {
@@ -195,6 +191,8 @@ module.exports = {
         "20H19",
         "20H30",
         "20H115",
+        "20H232",
+        "20H240",
         "21A5248v",
         "21A5268h",
         "21A5277h",
@@ -212,6 +210,14 @@ module.exports = {
         "21B5056e",
         "21B5066a",
         "21B74",
+        "21B91",
+        "21B101",
+        "21C5029g",
+        "21C5040g",
+        "21C5046c",
+        "21C5054b",
+        "21C62",
+        "21D5026f",
       ]
     }
   ]

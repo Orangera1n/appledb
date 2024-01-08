@@ -2,6 +2,7 @@
     "osStr": "macOS",
     "version": "13.5",
     "build": "22G2080",
+    "buildTrain": "RomeGHW",
     "released": "2023-11-07",
     "preinstalled": true,
     "appledbWebImage": {
@@ -11,12 +12,23 @@
     "deviceMap": [
         "Mac15,3",
         "Mac15,4",
-        "Mac15,5",
-        "Mac15,6",
-        "Mac15,7",
-        "Mac15,8",
-        "Mac15,9",
-        "Mac15,10",
-        "Mac15,11"
+        "Mac15,5"
+    ],
+    "sources": [
+        {
+            "type": "kdk",
+            "deviceMap": [
+                "Mac15,3",
+                "Mac15,4",
+                "Mac15,5"
+            ],
+            "links": [
+                {
+                    "url": "https://developer.apple.com/services-account/download?path=/macOS/Kernel_Debug_Kit_13.6.1_build_22G2080/Kernel_Debug_Kit_13.6.1_build_22G2080.dmg",
+                    "active": true
+                }
+            ],
+            "size": 393939297
+        }
     ]
 }

@@ -3,8 +3,13 @@
     "version": "9.6 beta",
     "iosVersion": "16.6 beta",
     "build": "20U5527c",
+    "buildTrain": "KincaidGSeed",
     "released": "2023-05-19",
     "beta": true,
+    "appledbWebImage": {
+        "id": "watchos9",
+        "align": "left"
+    },
     "deviceMap": [
         "Watch4,1",
         "Watch4,2",

@@ -2,9 +2,14 @@
     "osStr": "watchOS",
     "version": "10.0",
     "build": "21R355",
+    "buildTrain": "Lighthouse",
     "released": "2023-09-18",
     "hideFromLatestVersions": true,
     "preinstalled": true,
+    "appledbWebImage": {
+        "id": "watchos10",
+        "align": "left"
+    },
     "deviceMap": [
         "Watch7,1",
         "Watch7,2",

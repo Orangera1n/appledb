@@ -2,7 +2,9 @@
     "osStr": "macOS",
     "version": "10.13.4 beta",
     "build": "17E139j",
+    "embeddedOSBuild": "14Y661",
     "bridgeOSBuild": "15P53128e",
+    "buildTrain": "LoboElkSeed",
     "released": "2018-01-24",
     "beta": true,
     "appledbWebImage": {

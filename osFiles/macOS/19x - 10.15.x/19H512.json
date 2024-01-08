@@ -2,8 +2,18 @@
     "osStr": "macOS",
     "version": "10.15.7 (Security Update 2021-001)",
     "build": "19H512",
+    "embeddedOSBuild": "14Y908",
     "bridgeOSBuild": "18P4346",
+    "buildTrain": "JazzSecGoldenGateD",
     "released": "2021-02-01",
+    "createDuplicateEntries": [
+        {
+            "version": "10.15.7 (Security Update 2021-001 beta 3)",
+            "uniqueBuild": "19H512-beta",
+            "released": "2021-01-22",
+            "beta": true
+        }
+    ],
     "releaseNotes": "https://support.apple.com/kb/DL2068",
     "securityNotes": "https://support.apple.com/HT212147",
     "appledbWebImage": {

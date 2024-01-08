@@ -1,0 +1,26 @@
+{
+    "osStr": "bridgeOS",
+    "version": "2.3.2 beta 5",
+    "build": "15P56058b",
+    "buildTrain": "LoboGoatBridgeSeed",
+    "released": "2018-07-02",
+    "beta": true,
+    "deviceMap": [
+        "iBridge2,1"
+    ],
+    "sources": [
+        {
+            "type": "pkg",
+            "deviceMap": [
+                "iBridge2,1"
+            ],
+            "links": [
+                {
+                    "url": "http://swcdn.apple.com/content/downloads/52/33/091-94192/7vjbq0d26xsygd8nqi5d257r32r8hahhjn/BridgeOSUpdateCustomer.pkg",
+                    "active": false
+                }
+            ],
+            "size": 133664090
+        }
+    ]
+}

@@ -2,7 +2,9 @@
     "osStr": "macOS",
     "version": "11.2.1",
     "build": "20D74",
+    "embeddedOSBuild": "14Y908",
     "bridgeOSBuild": "18P4346",
+    "buildTrain": "GoldenGateD",
     "released": "2021-02-09",
     "releaseNotes": "https://support.apple.com/HT211896#macos1121",
     "securityNotes": "https://support.apple.com/HT212177",
@@ -78,7 +80,7 @@
     ],
     "sources": [
         {
-            "type": "installassistant",
+            "type": "kdk",
             "deviceMap": [
                 "ADP3,1",
                 "ADP3,2",
@@ -147,11 +149,11 @@
             ],
             "links": [
                 {
-                    "url": "http://swcdn.apple.com/content/downloads/00/60/071-05432-A_QOY2QE0UMR/puuz6c0epc7o0ozyovvi6tjxhzpf6uf04s/InstallAssistant.pkg",
-                    "active": false
+                    "url": "https://developer.apple.com/services-account/download?path=/Developer_Tools/Kernel_Debug_Kit_11.2.1_build_20D74/Kernel_Debug_Kit_11.2.1_build_20D74.dmg",
+                    "active": true
                 }
             ],
-            "hashes": {}
+            "size": 162826993
         },
         {
             "type": "ipsw",

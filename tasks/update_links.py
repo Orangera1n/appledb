@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import random
 import sys
 import json
 import queue
@@ -13,7 +14,7 @@ from urllib.parse import urlparse
 import requests
 import requests.adapters
 import urllib3
-from link_info import needs_auth, needs_apple_auth, no_head, apple_auth_token, no_active_false_to_true
+from link_info import needs_auth, needs_apple_auth, no_head, needs_cache_bust, apple_auth_token
 from sort_os_files import sort_os_file
 
 # Disable SSL warnings, because Apple's SSL is broken
@@ -80,8 +81,12 @@ class ProcessFileThread(threading.Thread):
                                 stream=True,
                             )
                         else:
+                            if urlparse(url).hostname in needs_cache_bust:
+                                suffix = f'?cachebust{random.randint(100, 1000)}'
+                            else:
+                                suffix = ''
                             resp = self.session.head(
-                                url.replace('developer.apple.com/services-account/download?path=', 'download.developer.apple.com'),
+                                f"{url}{suffix}".replace('developer.apple.com/services-account/download?path=', 'download.developer.apple.com'),
                                 headers={"User-Agent": "softwareupdated (unknown version) CFNetwork/808.1.4 Darwin/16.1.0"},
                                 verify=False,
                                 allow_redirects=True,
@@ -99,20 +104,14 @@ class ProcessFileThread(threading.Thread):
                     resp.close()
 
                 if resp.status_code == 200:
-                    successful_hit = True
+                    successful_hit = 'unauthorized' not in resp.url
                 elif resp.status_code == 403 or resp.status_code == 404:
                     # Dead link
                     successful_hit = False
                 else:  # Leave it be
                     raise Exception(f"Unknown status code: {resp.status_code}")
-                
-                if urlparse(url).hostname in no_active_false_to_true:
-                    if successful_hit and link.get('active') == False:
-                        success_map[url] = link["active"] = False
-                    else:
-                        success_map[url] = link["active"] = successful_hit
-                else:
-                    success_map[url] = link["active"] = successful_hit
+
+                success_map[url] = link["active"] = successful_hit
 
                 if successful_hit:
                     for hdr, lcl in [("x-amz-meta-digest-sha256", "sha2-256"), ("x-amz-meta-digest-sh1", "sha1")]:
@@ -134,6 +133,9 @@ class ProcessFileThread(threading.Thread):
                             # <md5>:<unix epoch>
                             # Seen on download.info.apple.com (Server: AkamaiNetStorage)
                             source.setdefault("hashes", {})["md5"] = potential_hash[:32]
+                        elif len(potential_hash) > 33 and potential_hash[32] == "-":
+                            # skip noise when processing large numbers of files
+                            pass
                         else:
                             print(f"Unknown ETag type: {resp.headers['ETag']}, ignoring")
 

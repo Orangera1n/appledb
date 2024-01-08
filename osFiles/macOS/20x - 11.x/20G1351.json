@@ -2,7 +2,9 @@
     "osStr": "macOS",
     "version": "11.7.8",
     "build": "20G1351",
+    "embeddedOSBuild": "14Y908",
     "bridgeOSBuild": "20P5060",
+    "buildTrain": "GoldenGateSecurityRomeF",
     "released": "2023-06-21",
     "releaseNotes": "https://support.apple.com/HT211896#macos1178",
     "securityNotes": "https://support.apple.com/HT213809",
@@ -148,7 +150,7 @@
             "links": [
                 {
                     "url": "https://swcdn.apple.com/content/downloads/36/17/032-96684-A_QB492M6Q9O/nhrd4zw4zjyv6gw5dz7f564giqpnp1ujot/InstallAssistant.pkg",
-                    "active": true
+                    "active": false
                 }
             ],
             "hashes": {

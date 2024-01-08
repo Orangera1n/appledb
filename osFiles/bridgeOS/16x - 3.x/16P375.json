@@ -1,0 +1,58 @@
+{
+    "osStr": "bridgeOS",
+    "version": "3.0",
+    "build": "16P375",
+    "buildTrain": "bridgeOSLiberty",
+    "released": "2018-09-25",
+    "createDuplicateEntries": [
+        {
+            "version": "3.0 beta 11",
+            "uniqueBuild": "16P375-beta",
+            "released": "2018-09-12",
+            "beta": true
+        }
+    ],
+    "deviceMap": [
+        "iBridge2,1",
+        "iBridge2,3",
+        "iBridge2,4"
+    ],
+    "sources": [
+        {
+            "type": "ipsw",
+            "deviceMap": [
+                "iBridge2,1",
+                "iBridge2,3",
+                "iBridge2,4"
+            ],
+            "links": [
+                {
+                    "url": "https://updates.cdn-apple.com/2018/macos/091-81673-20180924-E7493CFE-BD0F-11E8-997D-A634C81C3320/iBridge2,1,iBridge2,3,iBridge2,4_3.0_16P375_Restore.ipsw",
+                    "active": false
+                }
+            ],
+            "hashes": {
+                "sha1": "ab720f8fa8d9f8a9dc9dc87011607b1e0c95c741"
+            },
+            "size": 346959013
+        },
+        {
+            "type": "pkg",
+            "deviceMap": [
+                "iBridge2,1",
+                "iBridge2,3",
+                "iBridge2,4",
+                "iBridge2,5",
+                "iBridge2,7",
+                "iBridge2,8"
+            ],
+            "links": [
+                {
+                    "url": "http://swcdn.apple.com/content/downloads/48/38/041-08711/39fme90oy4xz7sc1is187ujxq4jsvpi6jg/BridgeOSUpdateCustomer.pkg",
+                    "active": false
+                }
+            ],
+            "size": 254012710
+        }
+    ]
+}

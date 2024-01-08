@@ -2,7 +2,9 @@
     "osStr": "macOS",
     "version": "11.6.2",
     "build": "20G314",
+    "embeddedOSBuild": "14Y908",
     "bridgeOSBuild": "19P647",
+    "buildTrain": "GoldenGateSecurityStarC",
     "released": "2021-12-13",
     "releaseNotes": "https://support.apple.com/HT211896#macos1162",
     "securityNotes": "https://support.apple.com/HT212979",
@@ -148,7 +150,7 @@
             "links": [
                 {
                     "url": "https://swcdn.apple.com/content/downloads/04/42/002-42341-A_4PL6G0S8GN/cs65avpi1aelh133lc36fy0ste3lihe71n/InstallAssistant.pkg",
-                    "active": true
+                    "active": false
                 }
             ],
             "hashes": {

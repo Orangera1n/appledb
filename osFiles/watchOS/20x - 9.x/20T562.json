@@ -3,6 +3,7 @@
     "version": "9.5",
     "iosVersion": "16.5",
     "build": "20T562",
+    "buildTrain": "KincaidF",
     "released": "2023-05-18",
     "createDuplicateEntries": [
         {
@@ -15,6 +16,10 @@
     ],
     "releaseNotes": "https://support.apple.com/HT213436#95",
     "securityNotes": "https://support.apple.com/HT213764",
+    "appledbWebImage": {
+        "id": "watchos9",
+        "align": "left"
+    },
     "deviceMap": [
         "Watch4,1",
         "Watch4,2",

@@ -2,6 +2,7 @@
     "osStr": "iOS",
     "version": "7.0 beta 4",
     "build": "11A5435d",
+    "buildTrain": "InnsbruckVail",
     "released": "2013-07-29",
     "beta": true,
     "appledbWebImage": {
@@ -11,5 +12,41 @@
     "deviceMap": [
         "iPhone5,3",
         "iPhone5,4"
+    ],
+    "sources": [
+        {
+            "type": "ota",
+            "prerequisiteBuild": "11A5414c",
+            "deviceMap": [
+                "iPhone5,3"
+            ],
+            "links": [
+                {
+                    "url": "http://appldnld.apple.com/iOS7//091-8382.20130729.65lt4/com_apple_MobileAsset_SoftwareUpdate/18acf07f30964aec4426b325b1b2a1f12e76279e.zip",
+                    "active": true
+                }
+            ],
+            "hashes": {
+                "md5": "51fe1cd17dcfd0689662cc7335106c97"
+            },
+            "size": 330283715
+        },
+        {
+            "type": "ota",
+            "prerequisiteBuild": "11A5414c",
+            "deviceMap": [
+                "iPhone5,4"
+            ],
+            "links": [
+                {
+                    "url": "http://appldnld.apple.com/iOS7//048-6786.20130729.Sfc45/com_apple_MobileAsset_SoftwareUpdate/dadedf91f16e497128f8990b7ff5dd4e07ca492d.zip",
+                    "active": true
+                }
+            ],
+            "hashes": {
+                "md5": "80a534739f60c990105ab48ef79bf032"
+            },
+            "size": 330135316
+        }
     ]
 }

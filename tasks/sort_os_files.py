@@ -15,7 +15,9 @@ key_order = [
     "sortVersion",
     "build",
     "uniqueBuild",
+    "embeddedOSBuild",
     "bridgeOSBuild",
+    "buildTrain",
     "released",
     "rc",
     "beta",
@@ -40,7 +42,7 @@ sources_key_order = ["type", "prerequisiteBuild", "deviceMap", "osMap", "windows
 
 links_key_order = ["url", "catalog", "preferred", "active"]
 
-source_type_order = ["ipsw", "installassistant", "ota", "update", "combo", "xip", "dmg", "pkg", "bin", "tar", "appx", "exe"]
+source_type_order = ["kdk", "ipsw", "installassistant", "ota", "update", "combo", "xip", "dmg", "pkg", "bin", "tar", "appx", "exe"]
 
 os_prefix_order = ['Mac OS', 'Mac OS X', 'OS X', 'macOS', 'Windows']
 
@@ -95,7 +97,7 @@ def os_map_sort(os_map):
 
 
 def build_number_sort(build_number):
-    match = re.match(r"(\d+)([A-Z])(\d+)([A-Z])?", build_number)
+    match = re.match(r"(\d+)([A-Z])(\d+)([A-z])?", build_number)
     if not match:
         return 0, "A", 0, "a"
     return int(match.groups()[0]), match.groups()[1], int(match.groups()[2]), match.groups()[3]
@@ -140,6 +142,7 @@ def sort_os_file(file_path: Optional[Path], raw_data=None):
 
             if set(data["sources"][i]["links"][j].keys()) - set(links_key_order):
                 raise ValueError(f"Unknown keys: {sorted(set(data['sources'][i]['links'][j].keys()) - set(links_key_order))}")
+        data["sources"][i]["links"].sort(key=lambda x: x.get('catalog', ''))
         if isinstance(source.get("prerequisiteBuild"), list):
             data["sources"][i]["prerequisiteBuild"].sort(key=build_number_sort)
 

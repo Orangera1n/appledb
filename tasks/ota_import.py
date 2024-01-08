@@ -82,7 +82,7 @@ def get_board_mappings(devices):
     return identifiers, bridge_identifiers
 
 
-def create_file(os_str, build, recommended_version=None, version=None, released=None, beta=None, rc=None, rsr=False):
+def create_file(os_str, build, recommended_version=None, version=None, released=None, beta=None, rc=None, rsr=False, buildtrain=None):
     assert version or recommended_version, "Must have either version or recommended_version"
 
     # watchOS 1 override
@@ -101,20 +101,17 @@ def create_file(os_str, build, recommended_version=None, version=None, released=
         os_str_override = "Apple TV Software"
         ios_version = recommended_version
         version_dir = [x.path.split("/")[-1] for x in os.scandir(f"osFiles/{os_str}") if x.path.startswith(f"osFiles/{os_str}/{kern_version}x")][0]
-    elif os_str == "bridgeOS":
-        version_dir = f"{kern_version}x"
     else:
         version_dir = f"{kern_version}x - {major_version}"
 
     if os_str == "audioOS" and packaging.version.parse(recommended_version.split(" ")[0]) >= packaging.version.parse("13.4"):
         os_str_override = 'HomePod Software'
 
-    if os_str == "visionOS":
-        db_file = Path(f"osFiles/{os_str}/{build}.json")
-    elif rsr:
-        db_file = Path(f"osFiles/Rapid Security Responses/{os_str}/{build}.json")
-    else:
-        db_file = Path(f"osFiles/{os_str}/{version_dir}/{build}.json")
+    file_path = f"osFiles/{os_str}/{version_dir}/{build}.json"
+    if rsr:
+        file_path = f"osFiles/Rapid Security Responses/{os_str}/{version_dir}/{build}.json"
+
+    db_file = Path(file_path)
 
     if db_file.exists():
         print("\tFile already exists, not replacing")
@@ -138,7 +135,7 @@ def create_file(os_str, build, recommended_version=None, version=None, released=
             if not friendly_version:
                 friendly_version = version or recommended_version
 
-        json_dict = {"osStr": os_str_override, "version": friendly_version, "build": build}
+        json_dict = {"osStr": os_str_override, "version": friendly_version, "build": build, "buildTrain": buildtrain}
         if os_str_override == "Apple TV Software":
             json_dict["iosVersion"] = ios_version
 
@@ -190,6 +187,7 @@ def import_ota(
     local_available = USE_LOCAL_IF_FOUND and local_path.exists()
     ota = None
     info_plist = None
+    build_manifest = None
 
     counter = 0
     while True:
@@ -198,6 +196,14 @@ def import_ota(
             print(f"\tGetting Info.plist {'from local file' if local_available else 'via remotezip'}")
 
             info_plist = plistlib.loads(ota.read("Info.plist"))
+            # manifest_paths = [f for f in ota.namelist() if f.endswith("BuildManifest.plist")]
+            # print(manifest_paths)
+            # build_manifest = plistlib.loads(ota.read(manifest_paths[0]))
+
+            if (ota_url.endswith(".ipsw")):
+                build_manifest = plistlib.loads(ota.read("boot/BuildManifest.plist"))
+            else:
+                build_manifest = plistlib.loads(ota.read("AssetData/boot/BuildManifest.plist"))
 
             if info_plist.get('MobileAssetProperties'):
                 info_plist = info_plist['MobileAssetProperties']
@@ -222,10 +228,12 @@ def import_ota(
         ota.close()
 
     # Get the build, version, and supported devices
+    buildtrain = build_manifest['BuildIdentities'][0]['Info']['BuildTrain']
     if (ota_url.endswith(".ipsw")):
+        print(info_plist)
         build = build or info_plist["TargetUpdate"]
         recommended_version = recommended_version or info_plist["ProductVersion"]
-        supported_devices = supported_devices or [info_plist["ProductType"]]
+        supported_devices = [info_plist["ProductType"]]
         bridge_devices = []
         prerequisite_builds = prerequisite_builds or info_plist.get('BaseUpdate')
     else:
@@ -270,12 +278,12 @@ def import_ota(
                 print(f"\tCouldn't match product types to any known OS: {supported_devices}")
                 os_str = input("\tEnter OS name: ").strip()
 
-    db_file = create_file(os_str, build, recommended_version=recommended_version, version=version, released=released, beta=beta, rc=rc, rsr=rsr)
+    db_file = create_file(os_str, build, recommended_version=recommended_version, version=version, released=released, beta=beta, rc=rc, rsr=rsr, buildtrain=buildtrain)
     db_data = json.load(db_file.open(encoding="utf-8"))
 
     db_data.setdefault("deviceMap", []).extend(augment_with_keys(supported_devices))
 
-    if os_str == 'iOS' or os_str == 'iPadOS':
+    if os_str in ('audioOS', 'iOS', 'iPadOS', 'tvOS', 'watchOS'):
         db_data['appledbWebImage'] = {
             'id': os_str.lower() + db_data["version"].split(".", 1)[0],
             'align': 'left'
@@ -327,10 +335,10 @@ def import_ota(
     if bridge_version and bridge_devices:
         macos_version = db_data["version"]
         bridge_version = macos_version.replace(macos_version.split(" ")[0], bridge_version)
-        db_file = create_file("bridgeOS", info_plist['BridgeVersionInfo']['BridgeProductBuildVersion'], recommended_version=bridge_version, released=db_data["released"])
-        db_data = json.load(db_file.open(encoding="utf-8"))
-        db_data["deviceMap"] = bridge_devices
-        json.dump(sort_os_file(None, db_data), db_file.open("w", encoding="utf-8", newline="\n"), indent=4, ensure_ascii=False)
+        bridge_file = create_file("bridgeOS", info_plist['BridgeVersionInfo']['BridgeProductBuildVersion'], recommended_version=bridge_version, released=db_data["released"])
+        bridge_data = json.load(bridge_file.open(encoding="utf-8"))
+        bridge_data["deviceMap"] = bridge_devices
+        json.dump(sort_os_file(None, bridge_data), bridge_file.open("w", encoding="utf-8", newline="\n"), indent=4, ensure_ascii=False)
     return db_file
 
 if __name__ == "__main__":

@@ -34,6 +34,11 @@ needs_apple_auth = [
     "developer.apple.com",
 ]
 
+# Domains that need cache-busting to check availability of underlying link
+needs_cache_bust = [
+    "swcdn.apple.com"
+]
+
 try:
     with open("apple_token.txt", "r") as token_file:
         apple_auth_token = token_file.readline()
@@ -42,9 +47,6 @@ except:
 
 # Domains that do not reliably support HEAD requests
 no_head = ["secure-appldnld.apple.com"]
-
-# Domains that have long caching on inactive links
-no_active_false_to_true = ["swcdn.apple.com"]
 
 
 def parse_link(url: str):

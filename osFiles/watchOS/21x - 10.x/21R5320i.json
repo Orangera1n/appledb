@@ -3,8 +3,13 @@
     "version": "10.0 beta 4",
     "iosVersion": "17.0 beta 4",
     "build": "21R5320i",
+    "buildTrain": "LighthouseSeed",
     "released": "2023-07-25",
     "beta": true,
+    "appledbWebImage": {
+        "id": "watchos10",
+        "align": "left"
+    },
     "deviceMap": [
         "Watch4,1",
         "Watch4,2",

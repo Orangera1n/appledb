@@ -3,8 +3,13 @@
     "version": "9.0 beta",
     "iosVersion": "16.0 beta",
     "build": "20R5287q",
+    "buildTrain": "KincaidSeed",
     "released": "2022-06-06",
     "beta": true,
+    "appledbWebImage": {
+        "id": "watchos9",
+        "align": "left"
+    },
     "deviceMap": [
         "Watch4,1",
         "Watch4,2",

@@ -2,6 +2,7 @@
     "osStr": "Safari",
     "version": "17.2 beta 1",
     "build": "617C5b",
+    "buildTrain": "SafariSunburstCVentura",
     "released": "2023-10-26",
     "beta": true,
     "releaseNotes": "https://developer.apple.com/services-account/download?path=/Safari/Safari_17.2_for_macOS_Ventura_and_Safari_17.2_for_macOS_Monterey_beta_1/Safari_17.2_Beta_1.pdf",
@@ -23,7 +24,7 @@
             "links": [
                 {
                     "url": "https://developer.apple.com/services-account/download?path=/Safari/Safari_17.2_for_macOS_Ventura_and_Safari_17.2_for_macOS_Monterey_beta_1/Safari_17.2_for_macOS_Ventura_beta_1.dmg",
-                    "active": true
+                    "active": false
                 }
             ],
             "size": 167380522
@@ -39,9 +40,14 @@
             "links": [
                 {
                     "url": "https://swcdn.apple.com/content/downloads/43/26/042-84014/pnal7sy4f4qloazglglgmfmw0x18leps6d/Safari17.2VenturaAutoSeed.pkg",
-                    "active": true
+                    "active": false
                 }
             ],
+            "hashes": {
+                "md5": "b8c8dc44851c2b7cbe65c7a58460f43c",
+                "sha1": "65d92f32c968d5f082a2be60612236bfd9732dba",
+                "sha256": "9346ef571652d70ded97c5d770eb3edd5e438a49ba087240818da1732c98ba97"
+            },
             "size": 167466671
         }
     ]

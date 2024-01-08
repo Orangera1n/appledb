@@ -2,7 +2,9 @@
     "osStr": "macOS",
     "version": "10.15 beta 2",
     "build": "19A487m",
-    "bridgeOSBuild": "16P56558a",
+    "embeddedOSBuild": "14Y904",
+    "bridgeOSBuild": "17P50482j",
+    "buildTrain": "macOSJazzSeed",
     "released": "2019-06-24",
     "beta": true,
     "appledbWebImage": {

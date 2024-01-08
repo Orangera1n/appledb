@@ -2,7 +2,9 @@
     "osStr": "macOS",
     "version": "13.1 beta 2",
     "build": "22C5044e",
+    "embeddedOSBuild": "14Y910",
     "bridgeOSBuild": "20P52043a",
+    "buildTrain": "RomeCSeed",
     "released": "2022-11-08",
     "beta": true,
     "appledbWebImage": {

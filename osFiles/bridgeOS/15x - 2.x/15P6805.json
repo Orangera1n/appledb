@@ -1,0 +1,29 @@
+{
+    "osStr": "bridgeOS",
+    "version": "2.4.1",
+    "build": "15P6805",
+    "buildTrain": "LoboGoatHWBridge",
+    "released": "2018-08-28",
+    "deviceMap": [
+        "iBridge2,1",
+        "iBridge2,3",
+        "iBridge2,4"
+    ],
+    "sources": [
+        {
+            "type": "pkg",
+            "deviceMap": [
+                "iBridge2,1",
+                "iBridge2,3",
+                "iBridge2,4"
+            ],
+            "links": [
+                {
+                    "url": "http://swcdn.apple.com/content/downloads/11/08/091-97108/4ccec0h09qkuxwpiec27bd9j458mr0wcwu/BridgeOSUpdateCustomer.pkg",
+                    "active": false
+                }
+            ],
+            "size": 193228101
+        }
+    ]
+}

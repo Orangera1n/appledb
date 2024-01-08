@@ -2,7 +2,9 @@
     "osStr": "macOS",
     "version": "11.6.1 RC 3",
     "build": "20G219",
+    "embeddedOSBuild": "14Y908",
     "bridgeOSBuild": "19P50547a",
+    "buildTrain": "GoldenGateSecurityStarBravo",
     "released": "2021-10-13",
     "rc": true,
     "appledbWebImage": {

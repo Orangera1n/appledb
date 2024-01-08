@@ -2,7 +2,9 @@
     "osStr": "macOS",
     "version": "10.14.6 (Security Update 2020-005)",
     "build": "18G6032",
+    "embeddedOSBuild": "14Y906",
     "bridgeOSBuild": "17P6610",
+    "buildTrain": "LibertySecJazzG",
     "released": "2020-09-24",
     "createDuplicateEntries": [
         {

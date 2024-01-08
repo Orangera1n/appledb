@@ -2,7 +2,9 @@
     "osStr": "macOS",
     "version": "10.15.7 (Supplemental Update 2)",
     "build": "19H524",
+    "embeddedOSBuild": "14Y908",
     "bridgeOSBuild": "18P4346",
+    "buildTrain": "JazzSecGoldenGateD",
     "released": "2021-02-09",
     "releaseNotes": "https://support.apple.com/kb/DL2071",
     "securityNotes": "https://support.apple.com/HT212177",
@@ -169,11 +171,12 @@
             ],
             "links": [
                 {
-                    "url": "https://updates.cdn-apple.com/2021/macos/071-05427-20210207-b65aec0c-f253-4ffe-9f4b-315edb84de46/SecUpd2021-001Catalina.dmg <!--File name suggests Security Release but kept here as it also includes a bug fix-->",
-                    "active": false
+                    "url": "https://updates.cdn-apple.com/2021/macos/071-05427-20210207-b65aec0c-f253-4ffe-9f4b-315edb84de46/SecUpd2021-001Catalina.dmg",
+                    "active": true
                 }
             ],
             "hashes": {
+                "md5": "b43a571cac3cd95b4f8c62fae3a13c65",
                 "sha1": "e7c45a499b742009e4cbf84ecb49efd1b32ea947"
             },
             "size": 1350059291

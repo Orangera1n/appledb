@@ -2,7 +2,9 @@
     "osStr": "macOS",
     "version": "11.0 beta 9",
     "build": "20A5384c",
+    "embeddedOSBuild": "14Y908",
     "bridgeOSBuild": "18P50390a",
+    "buildTrain": "GoldenGateSeedSpike",
     "released": "2020-09-29",
     "beta": true,
     "appledbWebImage": {

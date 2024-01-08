@@ -1,0 +1,34 @@
+{
+    "osStr": "iTunes",
+    "version": "4.7.1.30",
+    "released": "2005-01-11",
+    "deviceMap": [
+        "iTunes (Windows, x86)"
+    ],
+    "osMap": [
+        "Windows 2000",
+        "Windows XP"
+    ],
+    "sources": [
+        {
+            "type": "exe",
+            "deviceMap": [
+                "iTunes (Windows, x86)"
+            ],
+            "osMap": [
+                "Windows 2000",
+                "Windows XP"
+            ],
+            "links": [
+                {
+                    "url": "https://secure-appldnld.apple.com/iTunes4/WW/win/019-0312.20050111.MmVrT/iTunesSetup.exe",
+                    "active": false
+                }
+            ],
+            "hashes": {
+                "sha1": "e645f17113491b3af735d1d42865ee6deb6342ee"
+            },
+            "size": 21848504
+        }
+    ]
+}

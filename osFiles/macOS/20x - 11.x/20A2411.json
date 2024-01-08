@@ -2,6 +2,7 @@
     "osStr": "macOS",
     "version": "11.0",
     "build": "20A2411",
+    "buildTrain": "GoldenGateHWSpike",
     "released": "2020-11-10",
     "preinstalled": true,
     "appledbWebImage": {
@@ -12,5 +13,22 @@
         "MacBookAir10,1",
         "MacBookPro17,1",
         "Macmini9,1"
+    ],
+    "sources": [
+        {
+            "type": "kdk",
+            "deviceMap": [
+                "MacBookAir10,1",
+                "MacBookPro17,1",
+                "Macmini9,1"
+            ],
+            "links": [
+                {
+                    "url": "https://developer.apple.com/services-account/download?path=/Developer_Tools/Kernel_Debug_Kit_11.0_build_20A2411/Kernel_Debug_Kit_11.0_build_20A2411.dmg",
+                    "active": true
+                }
+            ],
+            "size": 164069778
+        }
     ]
 }

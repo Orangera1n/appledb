@@ -2,8 +2,13 @@
     "osStr": "HomePod Software",
     "version": "17.0 beta 2",
     "build": "21J5303f",
+    "buildTrain": "StarlightSeed",
     "released": "2023-07-05",
     "beta": true,
+    "appledbWebImage": {
+        "id": "audioos17",
+        "align": "left"
+    },
     "deviceMap": [
         "AudioAccessory1,1",
         "AudioAccessory1,2",

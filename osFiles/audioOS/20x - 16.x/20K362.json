@@ -2,6 +2,7 @@
     "osStr": "HomePod Software",
     "version": "16.2",
     "build": "20K362",
+    "buildTrain": "ParisC",
     "released": "2022-12-13",
     "createDuplicateEntries": [
         {
@@ -14,6 +15,10 @@
     "releaseNotes": "https://support.apple.com/HT208714#162",
     "ipd": {
         "AudioAccessory": "https://updates.cdn-apple.com/2022WinterFCS/documentation/032-13494/36A18F84-C913-4BD8-9FE8-5E849C5BC426/HomePodRTF.ipd"
+    },
+    "appledbWebImage": {
+        "id": "audioos16",
+        "align": "left"
     },
     "deviceMap": [
         "AudioAccessory1,1",

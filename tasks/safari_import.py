@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 
+import hashlib
 import json
 import plistlib
+import random
 import subprocess
 import shutil
 from pathlib import Path
@@ -14,16 +16,15 @@ from sort_os_files import sort_os_file
 from update_links import update_links
 
 parser = argparse.ArgumentParser()
+parser.add_argument('-v', '--version', type=int, default=17)
 parser.add_argument('-b', '--beta', action='store_true')
 args = parser.parse_args()
-
-SAFARI_VERSION = 17
 
 SESSION = requests.session()
 
 mac_versions = [
-    SAFARI_VERSION - 5,
-    SAFARI_VERSION - 4
+    args.version - 5,
+    args.version - 4
 ]
 
 mac_codenames = {
@@ -52,13 +53,13 @@ if args.beta:
 SAFARI_DETAILS = {}
 
 for mac_version in mac_versions:
-    raw_sucatalog = SESSION.get(f'https://swscan.apple.com/content/catalogs/others/index-{mac_version}{MAC_CATALOG_SUFFIX}-1.sucatalog')
+    raw_sucatalog = SESSION.get(f'https://swscan.apple.com/content/catalogs/others/index-{mac_version}{MAC_CATALOG_SUFFIX}-1.sucatalog?cachebust{random.randint(100, 1000)}')
     raw_sucatalog.raise_for_status()
 
     plist = plistlib.loads(raw_sucatalog.content)['Products']
     catalog_safari = None
     for product in plist.values():
-        if f"Safari{SAFARI_VERSION}" not in product.get("ServerMetadataURL", ""):
+        if f"Safari{args.version}" not in product.get("ServerMetadataURL", ""):
             continue
 
         dist_response = requests.get(product['Distributions']['English']).text
@@ -72,11 +73,23 @@ for mac_version in mac_versions:
 
     safari_destination_path = f'out/Safari_{dist_version.replace(" ", "_")}_{mac_version}'
     plist_path = ''
+    file_hashes = {}
+    sha1 = hashlib.sha1()
+    md5 = hashlib.md5()
+    sha256 = hashlib.sha256()
 
     with open(f'{safari_destination_path}.pkg', 'wb') as pkg_file:
-        pkg_file.write(SESSION.get(catalog_safari['Packages'][0]['URL']).content)
+        data = SESSION.get(catalog_safari['Packages'][0]['URL']).content
+        pkg_file.write(data)
+        sha1.update(data)
+        sha256.update(data)
+        md5.update(data)
         pkgutil_response = subprocess.run(['pkgutil', '--expand', f'{safari_destination_path}.pkg', f'{safari_destination_path}'])
         pkgutil_response.check_returncode()
+
+        file_hashes['sha1'] = sha1.hexdigest()
+        file_hashes['sha256'] = sha256.hexdigest()
+        file_hashes['md5'] = md5.hexdigest()
 
         with open(f'{safari_destination_path}/Payload', 'rb') as payload_file:
             if mac_version <= 12:
@@ -88,6 +101,9 @@ for mac_version in mac_versions:
     
     safari_plist = plistlib.loads(Path(f'{safari_destination_path}/{plist_path}').read_bytes())
     safari_build = safari_plist['ProductBuildVersion']
+    safari_buildtrain = None
+    if plist_path.endswith('BuildManifest.plist'):
+        safari_buildtrain = safari_plist['BuildIdentities'][0]['Info']['BuildTrain']
 
     is_beta = 'beta' in dist_version
     safari_subfolder = ''
@@ -118,23 +134,28 @@ for mac_version in mac_versions:
 
         if is_beta:
             SAFARI_DETAILS[safari_build]['beta'] = True
-            SAFARI_DETAILS[safari_build]["sources"].append({
-                "type": "dmg",
-                "deviceMap": [
-                    "Safari (macOS)"
-                ],
-                "osMap": [
-                    f"macOS {mac_version}"
-                ],
-                "links": [
-                    {
-                        "url": f'https://developer.apple.com/services-account/download?path=/Safari/{safari_subfolder}/{get_beta_filename(dist_version)}'
-                    }
-                ]
-            })
 
 
     SAFARI_DETAILS[safari_build]["osMap"].append(f"macOS {mac_version}")
+
+    if safari_buildtrain and not SAFARI_DETAILS[safari_build].get('buildTrain'):
+        SAFARI_DETAILS[safari_build]['buildTrain'] = safari_buildtrain
+
+    if is_beta:
+        SAFARI_DETAILS[safari_build]["sources"].append({
+            "type": "dmg",
+            "deviceMap": [
+                "Safari (macOS)"
+            ],
+            "osMap": [
+                f"macOS {mac_version}"
+            ],
+            "links": [
+                {
+                    "url": f'https://developer.apple.com/services-account/download?path=/Safari/{safari_subfolder}/{get_beta_filename(dist_version)}'
+                }
+            ]
+        })
 
     SAFARI_DETAILS[safari_build]["sources"].append({
         "type": "pkg",
@@ -144,6 +165,7 @@ for mac_version in mac_versions:
         "osMap": [
             f"macOS {mac_version}"
         ],
+        "hashes": file_hashes,
         "links": [
             {
                 "url": catalog_safari['Packages'][0]['URL']
@@ -155,6 +177,6 @@ for mac_version in mac_versions:
     shutil.rmtree(safari_destination_path)
 
 for build, details in SAFARI_DETAILS.items():
-    safari_file = Path(f'osFiles/Software/Safari/{SAFARI_VERSION}.x/{build}.json')
+    safari_file = Path(f'osFiles/Software/Safari/{args.version}.x/{build}.json')
     json.dump(sort_os_file(None, details), safari_file.open("w", encoding="utf-8", newline="\n"), indent=4, ensure_ascii=False)
     update_links([safari_file])

@@ -24,7 +24,7 @@
             "links": [
                 {
                     "url": "https://secure-appldnld.apple.com/STP/042-86626-20231101-941E0CBB-81C9-403C-9AA5-3D4274927C66/SafariTechnologyPreview.dmg",
-                    "active": true
+                    "active": false
                 }
             ],
             "hashes": {
@@ -43,7 +43,7 @@
             "links": [
                 {
                     "url": "https://secure-appldnld.apple.com/STP/042-86511-20231101-AFAFC320-E983-45D3-A39C-829EA7E33D0D/SafariTechnologyPreview.dmg",
-                    "active": true
+                    "active": false
                 }
             ],
             "hashes": {
@@ -62,7 +62,7 @@
             "links": [
                 {
                     "url": "https://swcdn.apple.com/content/downloads/15/49/042-86627-A_AYW4WMFCYU/3vewhe8sluvyeive06b8olc1sb62zh7j58/SafariTechPreview.pkg",
-                    "active": true
+                    "active": false
                 }
             ],
             "hashes": {
@@ -82,7 +82,7 @@
             "links": [
                 {
                     "url": "https://swcdn.apple.com/content/downloads/61/60/042-86510-A_B4Z65XEA4K/gpoyy6me9bymhnriw4x4ywk2a9w3zq5c1x/SafariTechPreview.pkg",
-                    "active": true
+                    "active": false
                 }
             ],
             "hashes": {

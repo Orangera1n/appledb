@@ -2,9 +2,14 @@
     "osStr": "tvOS",
     "version": "16.0",
     "build": "20J8378",
+    "buildTrain": "ParisHW",
     "released": "2022-11-04",
     "hideFromLatestVersions": true,
     "preinstalled": true,
+    "appledbWebImage": {
+        "id": "tvos16",
+        "align": "left"
+    },
     "deviceMap": [
         "AppleTV14,1",
         "AppleTV14,1-wifi"
